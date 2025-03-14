@@ -11,7 +11,6 @@
             padding: 20px; 
             color: #333;
         }
-
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -20,7 +19,6 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-
         h1 {
             text-align: center;
             color: #1a73e8;
@@ -31,11 +29,9 @@
             gap: 10px;
             flex-wrap: wrap;
         }
-
         .title-icon {
             width: 40px;
         }
-
         .last-updated {
             text-align: center;
             font-size: 14px;
@@ -44,74 +40,55 @@
             margin-bottom: 20px;
             font-style: italic;
         }
-
-        /* Updated Notice Banner in Cold Blue with Pulse Animation */
-        .notice {
-            background: linear-gradient(90deg, #4a90e2, #357ab8);
-            padding: 10px;
-            border: 1px solid #357ab8;
+        /* Poker GIF/Animation Section */
+        .poker-animation {
             text-align: center;
-            font-weight: bold;
-            margin-bottom: 20px;
+            margin: 20px 0;
+        }
+        .poker-animation img {
+            max-width: 100%;
             border-radius: 8px;
-            animation: pulse 2s infinite ease-in-out;
-            box-shadow: 0 0 10px rgba(53, 122, 184, 0.8);
-            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.9; }
-        }
-
         .video-entry {
             border-top: 3px solid #1a73e8;
             padding: 15px 0;
             margin-top: 20px;
         }
-
         .video-title {
             font-weight: bold;
             color: #1a73e8;
             margin-bottom: 5px;
         }
-
         .summary-list {
             list-style-type: none;
             padding-left: 0;
             margin-top: 10px;
             line-height: 1.8;
         }
-
         .summary-list li {
             margin-bottom: 10px;
             border-left: 3px solid #1a73e8;
             padding-left: 10px;
         }
-
         .highlighted-timestamp {
             font-weight: bold;
             color: #d9534f;
         }
-
         .video-link {
             color: #1a73e8;
             text-decoration: none;
             font-weight: bold;
         }
-
         .video-preview {
             margin-top: 10px;
             text-align: center;
         }
-
         iframe {
             width: 100%;
             height: 315px;
             border-radius: 10px;
         }
-
         /* Collapsible Styles */
         .collapsible {
             background-color: #f0f8ff;
@@ -120,7 +97,6 @@
             margin-top: 15px;
             overflow: hidden;
         }
-
         .collapsible-header {
             background-color: #1a73e8;
             color: #fff;
@@ -128,22 +104,18 @@
             padding: 10px 15px;
             border-bottom: 2px solid #1455c0;
         }
-
         .collapsible-content {
             display: none;
             padding: 10px 15px;
         }
-
         .collapsible.active .collapsible-content {
             display: block;
             animation: slideIn 0.3s ease-out;
         }
-
         @keyframes slideIn {
             from { opacity: 0; transform: translateY(-5px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         /* Media Queries for Mobile Responsiveness */
         @media (max-width: 600px) {
             body {
@@ -154,9 +126,6 @@
             }
             h1 {
                 font-size: 24px;
-            }
-            .notice {
-                font-size: 14px;
             }
             .video-title {
                 font-size: 18px;
@@ -174,17 +143,19 @@
 </head>
 <body>
     <div class="container">
-        <!-- Updated Short Notice Banner -->
-        <div class="notice">
-            Note: Timestamps are under review.
-        </div>
         <h1>
             <img src="https://cdn-icons-png.flaticon.com/512/2942/2942636.png" class="title-icon">
             Phil’s Report Triton Insights 
             <img src="https://cdn-icons-png.flaticon.com/512/2942/2942636.png" class="title-icon">
         </h1>
-        <p class="last-updated">Last Updated: 2025-03-14 05:48:39</p>
-
+        <p class="last-updated">Last Updated: 2025-03-14 05:53:13</p>
+        
+        <!-- Poker Animation Section -->
+        <div class="poker-animation">
+            <!-- Replace the URL below with a poker-related GIF/animation of your choice -->
+            <img src="https://media.giphy.com/media/3oEjHP8ELRNNlnlLGM/giphy.gif" alt="Cool Poker Animation">
+        </div>
+        
         <div id="video-list" class="video-entries">
             
                 <div class="video-entry" id="1eCLYYrld7E">
@@ -360,7 +331,6 @@
             
         </div>
     </div>
-
     <script>
         document.querySelectorAll('.collapsible-header').forEach(header => {
             header.addEventListener('click', () => {
