@@ -44,20 +44,23 @@
             font-style: italic;
         }
 
-        /* Notice Banner Styles */
+        /* Notice Banner Styles with a Pulse Animation */
         .notice {
-            background-color: #ffebcc;
-            padding: 10px;
+            background: linear-gradient(90deg, #ffdd57, #f0ad4e);
+            padding: 15px;
             border: 1px solid #f0ad4e;
             text-align: center;
             font-weight: bold;
             margin-bottom: 20px;
-            animation: fadeInDown 1s ease-in-out;
+            border-radius: 8px;
+            animation: pulse 2s infinite ease-in-out;
+            box-shadow: 0 0 10px rgba(240, 173, 78, 0.8);
         }
         
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.9; }
         }
 
         .video-entry {
@@ -142,16 +145,16 @@
 </head>
 <body>
     <div class="container">
-        <!-- Notice Banner -->
+        <!-- Cool Animated Notice Banner -->
         <div class="notice">
-            Notice: Timestamps are currently incorrect and are being worked on.
+            Important Notice: Timestamps are currently being fine-tuned to ensure absolute accuracy. Thank you for your patience!
         </div>
         <h1>
             <img src="https://cdn-icons-png.flaticon.com/512/2942/2942636.png" class="title-icon">
             Phil’s Report Triton Insights 
             <img src="https://cdn-icons-png.flaticon.com/512/2942/2942636.png" class="title-icon">
         </h1>
-        <p class="last-updated">Last Updated: 2025-03-14 02:06:23</p>
+        <p class="last-updated">Last Updated: 2025-03-14 02:09:13</p>
 
         <div id="video-list" class="video-entries">
             
