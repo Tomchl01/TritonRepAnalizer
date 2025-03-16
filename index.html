@@ -1,111 +1,106 @@
-<style>
-    /* ... (keep your existing basic styles) ... */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phil's Report Triton Insights - Powered by DeepSeek Poker Solutions</title>
+    <style>
+        body { 
+            font-family: 'Poppins', Arial, sans-serif; 
+            background-color: #f1f1f1;
+            margin: 0; 
+            padding: 20px; 
+            color: #333;
+            line-height: 1.6;
+        }
 
-    /* Improved collapsible sections */
-    .collapsible {
-        margin: 10px 0;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        overflow: hidden;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-    .collapsible-header {
-        background-color: #f8f9fa;
-        padding: 12px 15px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #1a73e8;
-        font-weight: 600;
-        border-bottom: 1px solid #e0e0e0;
-        transition: all 0.3s ease;
-    }
+        .header-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    .collapsible-header:hover {
-        background-color: #e8f0fe;
-    }
+        h1 {
+            color: #1a73e8;
+            margin: 0;
+            padding: 20px 0;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
 
-    .toggle-icon {
-        font-size: 18px;
-        transition: transform 0.3s ease;
-    }
+        .title-icon {
+            width: 24px;
+            height: 24px;
+            opacity: 0.8;
+            animation: subtle-pulse 3s infinite ease-in-out;
+        }
 
-    .collapsible.active .toggle-icon {
-        transform: rotate(45deg);
-    }
+        @keyframes subtle-pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
 
-    .collapsible-content {
-        background-color: white;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-    }
+        .last-updated {
+            display: inline-block;
+            font-size: 12px;
+            color: #666;
+            background-color: #f8f9fa;
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
 
-    .collapsible.active .collapsible-content {
-        max-height: 1000px;
-        padding: 15px;
-    }
+        .video-entry {
+            border: 1px solid #e3e3e3;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-    /* Improved timestamp styling */
-    .highlighted-timestamp {
-        display: inline-block;
-        padding: 2px 8px;
-        margin: 0 2px;
-        background-color: #f8d7da;
-        border: 1px solid #f5c6cb;
-        border-radius: 4px;
-        color: #721c24;
-        text-decoration: none !important;
-        font-weight: 500;
-        font-family: monospace;
-        transition: all 0.2s ease;
-    }
+        .video-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
 
-    .highlighted-timestamp:hover {
-        background-color: #721c24;
-        color: white;
-        transform: translateY(-1px);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+        .video-title {
+            font-size: 18px;
+            color: #1a73e8;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
 
-    /* Improved summary list */
-    .summary-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+        .video-details {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
 
-    .summary-list li {
-        margin-bottom: 8px;
-        padding: 8px 12px;
-        background-color: #f8f9fa;
-        border-left: 3px solid #1a73e8;
-        border-radius: 0 4px 4px 0;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-</style>
+        .video-preview {
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.collapsible-header').forEach(header => {
-        header.addEventListener('click', function() {
-            const parent = this.parentNode;
-            const content = this.nextElementSibling;
-            const allCollapsibles = document.querySelectorAll('.collapsible');
-            
-            // Close other sections if clicked on a different one
-            allCollapsibles.forEach(collapsible => {
-                if (collapsible !== parent && collapsible.classList.contains('active')) {
-                    collapsible.classList.remove('active');
-                }
-            });
-            
-            // Toggle current section
-            parent.classList.toggle('active');
-        });
-    });
-});
-</script>
+        .video-preview iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
