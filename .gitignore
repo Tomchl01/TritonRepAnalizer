@@ -1,0 +1,18 @@
+# Ignore sensitive environment files
+.env
+
+# Ignore generated data and reports
+data/
+logs/
+reports/
+summaries/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore log files
+*.log
+
+# Ignore JSON files with credentials
+*.json
